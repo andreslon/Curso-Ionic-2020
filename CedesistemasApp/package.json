@@ -1,7 +1,7 @@
 {
   "name": "CedesistemasApp",
   "version": "0.0.1",
-  "author": "Ionic Framework",
+  "author": "Andrés Londoño",
   "homepage": "https://ionicframework.com/",
   "scripts": {
     "ng": "ng",
