@@ -1,44 +1,23 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Home
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-tabs>
+  <ion-tab-bar>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Home</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <ion-tab-button tab="restaurants">
+      <ion-icon name="restaurant-outline"></ion-icon>
+      <ion-label >Restaurantes</ion-label>
+      <ion-badge>7</ion-badge>
+    </ion-tab-button>
 
-  <div id="container">
+    <ion-tab-button tab="fundaments">
+      <ion-icon name="book-outline"></ion-icon>
+      <ion-label >Fundamentos</ion-label>
+    </ion-tab-button>
 
 
-    <!-- Binding -->
-    
-    <!-- One Way -->
-    <!-- Two Way -->
+    <ion-tab-button tab="about">
+      <ion-icon name="information-circle-outline"></ion-icon>
+      <ion-label >Acerca de</ion-label>
+    </ion-tab-button>
 
 
-    <ion-input clearInput placeholder="Nombre" [(ngModel)]="nombre"></ion-input> 
-    <ion-input clearInput [(ngModel)]="apellidos" placeholder="Apellidos"></ion-input>
-    <ion-input clearInput type="number" [(ngModel)]="edad" placeholder="Edad"></ion-input>
- 
- 
-    <ion-button expand="block" (click)="crearEstudiante()">Agregar Estudiante</ion-button>
-
-    <ion-list>
-      <ion-item *ngFor="let estudiante of estudiantes">
-        <ion-label>
-          <label style="color: red;">{{estudiante.nombre}}</label>
-          
-          {{estudiante.apellidos}} -  {{estudiante.edad}}</ion-label>
-      </ion-item>
-    </ion-list>
-
-
-
-  </div>
-</ion-content>
+  </ion-tab-bar>
+</ion-tabs>

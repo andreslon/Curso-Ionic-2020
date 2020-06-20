@@ -1,3 +1,4 @@
+import { NavController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPage implements OnInit {
 
-  constructor() { }
+  constructor(private navController: NavController) {
+
+
+   }
 
   ngOnInit() {
+  }
+
+  public goToHome(){
+    this.navController.navigateRoot('/home');
   }
 
 }

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Cedesistemas Ionic</string>
+    <string name="title_activity_main">Cedesistemas Ionic</string>
+    <string name="package_name">com.cedesistemas.ionic</string>
+    <string name="custom_url_scheme">com.cedesistemas.ionic</string>
+</resources>
