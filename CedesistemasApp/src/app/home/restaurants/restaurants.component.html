@@ -1,3 +1,15 @@
-<p>
-  restaurants works!
-</p>
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let restaurant of restaurants">
+      <ion-avatar slot="start" >
+        <img src="{{restaurant.imagen}}">
+      </ion-avatar>
+      <ion-label  >
+        <h2>{{restaurant.nombre}}  </h2>
+        <p>{{restaurant.direccion}}  </p> 
+      </ion-label>
+    </ion-item> 
+  </ion-list>
+</ion-content>
+
+ 
