@@ -1,0 +1,19 @@
+
+$primaryColor:#ee5253;
+
+.myContainer{
+    position: relative;
+    height: 100%; 
+    .myCard{
+        top: 50%;
+        transform: translateY(50%);
+        position: initial; 
+    }
+} 
+.myLogo{
+    width: 30%;
+    margin: 0 auto;
+    background-color: $primaryColor;
+    border-radius: 50%; 
+}
+ 
