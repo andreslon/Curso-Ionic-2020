@@ -9,6 +9,7 @@ import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
 import { RestaurantsComponent } from './restaurants/restaurants.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -16,7 +17,7 @@ import { RestaurantsComponent } from './restaurants/restaurants.component';
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    HomePageRoutingModule 
   ],
   declarations: [
     HomePage, 

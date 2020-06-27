@@ -1,7 +1,6 @@
 import { RestaurantModel } from './../restaurants/restaurant.model';
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
-import { RestaurantModel } from '../restaurants/restaurant.model';
+import { ActivatedRoute } from "@angular/router"; 
 
 @Component({
   selector: "app-detail",
@@ -21,3 +20,4 @@ export class DetailPage implements OnInit {
 
   ngOnInit() {}
 }
+ 
