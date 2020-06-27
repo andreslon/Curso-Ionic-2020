@@ -1,3 +1,4 @@
+import { RestaurantsModule } from './restaurants/restaurants.module';
 import { AboutComponent } from './about/about.component';
 import { FundamentsComponent } from './fundaments/fundaments.component';
 import { NgModule } from '@angular/core';
@@ -17,7 +18,12 @@ const routes: Routes = [
     children:[
       {
         path:"restaurants",
-        component: RestaurantsComponent
+        children:[
+          {
+            path:'',
+            loadChildren: () => import('./restaurants/restaurants.module').then((m)=> m.RestaurantsModule)
+          }
+        ]
       },
       {
         path:"fundaments",
