@@ -20,7 +20,6 @@ import { RestaurantsComponent } from './restaurants/restaurants.component';
   ],
   declarations: [
     HomePage, 
-    RestaurantsComponent,
     AboutComponent,
     FundamentsComponent
   ],

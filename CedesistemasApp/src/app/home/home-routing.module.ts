@@ -1,69 +1,63 @@
-import { AboutComponent } from './about/about.component';
-import { FundamentsComponent } from './fundaments/fundaments.component';
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { HomePage } from './home.page';
-import { RestaurantsComponent } from './restaurants/restaurants.component';
+import { AboutComponent } from "./about/about.component";
+import { FundamentsComponent } from "./fundaments/fundaments.component";
+import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from "@angular/router";
+import { HomePage } from "./home.page"; 
 
 const routes: Routes = [
   {
-    path:'',
-    //redirectTo:'/home/tabs/restaurants',
-    //pathMatch: "full"
+    path: "",
+     redirectTo:'/home/tabs/restaurants',
+     pathMatch: "full"
   },
   {
-    path: 'tabs',
+    path: "tabs",
     component: HomePage,
-    children:[
-
+    children: [ 
       {
-        path: 'tab1',
+        path: "restaurants",
         children: [
           {
-            path: '',
-            // loadChildren: './tab1/tab1.module#Tab1PageModule'
-            loadChildren: () => import('./tab1/tab1.module').then( m => m.Tab1PageModule) 
+            path: "",
+            loadChildren: () =>
+              import("./restaurants/restaurants.module").then(
+                (m) => m.RestaurantsModule
+              ),
           },
           {
-            path: 'profile',
+            path: "detail",
             children: [
               {
-                path: '',
-                loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule) 
+                path: "",
+                
+                loadChildren: () =>
+                  import("./detail/detail.module").then(
+                    (m) => m.DetailPageModule
+                  ),
               },
-              {
-                path: 'profile-settings',
-                loadChildren: '../profile-settings/profile-settings.module#ProfileSettingsPageModule'
-              }
-            ]
-          }
-        ]
-      },
-
-
-      {
-        path:"restaurants",
-        component: RestaurantsComponent
+            ],
+          },
+        ],
       },
       {
-        path:"fundaments",
-        component: FundamentsComponent
+        path: "fundaments",
+        component: FundamentsComponent,
       },
       {
-        path:"about",
-        component: AboutComponent
-      }
-    ]
+        path: "about",
+        component: AboutComponent,
+      },
+    ],
   },
   {
-    path: 'profile',
-    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
-  }
-
+    path: "detail",
+    loadChildren: () =>
+      import("./detail/detail.module").then((m) => m.DetailPageModule),
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class HomePageRoutingModule {}

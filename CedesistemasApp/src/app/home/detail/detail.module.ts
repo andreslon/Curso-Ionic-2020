@@ -5,14 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ProfilePage } from './profile.page';
-
-// const routes: Routes = [
-//   {
-//     path: '',
-//     component: ProfilePage
-//   }
-// ];
+import { DetailPage } from './detail.page';
 
 const routes: Routes = [
   {
@@ -20,11 +13,11 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: ProfilePage
+        component: DetailPage
       },
       {
-        path: 'profile-settings',
-        loadChildren: '../profile-settings/profile-settings.module#ProfileSettingsPageModule'
+        path: 'detail-settings',
+        loadChildren: '../detail-settings/detail-settings.module#DetailSettingsPageModule'
       }
     ]
   }
@@ -37,6 +30,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [ProfilePage]
+  declarations: [DetailPage]
 })
-export class ProfilePageModule { }
+export class DetailPageModule { }

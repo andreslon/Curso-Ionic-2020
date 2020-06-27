@@ -19,5 +19,9 @@ export class RestaurantsComponent {
       .subscribe((data: RestaurantModel[]) => {
         this.restaurants = data;
       });
+  } 
+  goToDetail(item){
+
+    
   }
 }

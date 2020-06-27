@@ -2,18 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import { Router, RouterEvent, NavigationEnd } from '@angular/router';
 
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.page.html',
-  styleUrls: ['./profile.page.scss'],
+  selector: 'app-detail',
+  templateUrl: './detail.page.html',
+  styleUrls: ['./detail.page.scss'],
 })
-export class ProfilePage implements OnInit {
+export class DetailPage implements OnInit {
 
-  profileSettingsPath = '';
+  detailSettingsPath = '';
 
   constructor(private router: Router) {
     this.router.events.subscribe((event: RouterEvent) => {
       if (event && event instanceof NavigationEnd && event.url) {
-        this.profileSettingsPath = event.url + '/profile-settings';
+        this.detailSettingsPath = event.url + '/detail-settings';
       }
     });
   }
