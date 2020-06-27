@@ -28,10 +28,10 @@
 
       <ion-grid>
         <ion-row>
-          <ion-col>
+          <ion-col (click)="callPhone(item.telefono)">
             {{item.telefono}}
           </ion-col>
-          <ion-col>
+          <ion-col (click)="openWeb(item.sitioWeb)">
             {{item.sitioWeb}}
           </ion-col> 
         </ion-row>

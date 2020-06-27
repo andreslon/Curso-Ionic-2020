@@ -8,6 +8,9 @@ import { IonicModule } from '@ionic/angular';
 import { DetailPage } from './detail.page';
 import { SharedModule } from 'src/app/shared/shared.module';
 
+import { CallNumber } from '@ionic-native/call-number/ngx';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
+
 const routes: Routes = [
   {
     path: '',
@@ -31,8 +34,9 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes),
 
-    SharedModule
+    SharedModule, 
   ],
-  declarations: [DetailPage]
+  declarations: [DetailPage],
+  providers:[CallNumber, InAppBrowser ]
 })
 export class DetailPageModule { }
