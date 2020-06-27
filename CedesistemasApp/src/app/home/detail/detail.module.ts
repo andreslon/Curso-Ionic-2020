@@ -5,8 +5,11 @@ import { DetailComponent } from "./detail.component";
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 
+import { CallNumber } from '@ionic-native/call-number/ngx'; 
+
 @NgModule({
   declarations: [DetailComponent],
+  providers:[CallNumber],
   imports: [
     CommonModule,
     FormsModule,

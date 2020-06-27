@@ -10,6 +10,8 @@ import { Component, OnInit } from "@angular/core";
 export class RestaurantsComponent {
   restaurants: RestaurantModel[] = [];
   restaurantsAll: RestaurantModel[] = [];
+
+  
   constructor(private restaurantsService: RestaurantsService) {
     this.loadRestaurants();
   }
