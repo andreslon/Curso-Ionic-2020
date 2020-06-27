@@ -1,24 +1,23 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, RouterEvent, NavigationEnd } from '@angular/router';
+import { RestaurantModel } from './../restaurants/restaurant.model';
+import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
+import { RestaurantModel } from '../restaurants/restaurant.model';
 
 @Component({
-  selector: 'app-detail',
-  templateUrl: './detail.page.html',
-  styleUrls: ['./detail.page.scss'],
+  selector: "app-detail",
+  templateUrl: "./detail.page.html",
+  styleUrls: ["./detail.page.scss"],
 })
 export class DetailPage implements OnInit {
+  
+  item:RestaurantModel;
 
-  detailSettingsPath = '';
 
-  constructor(private router: Router) {
-    this.router.events.subscribe((event: RouterEvent) => {
-      if (event && event instanceof NavigationEnd && event.url) {
-        this.detailSettingsPath = event.url + '/detail-settings';
-      }
+  constructor(private activatedRoute: ActivatedRoute) {
+    this.activatedRoute.params.subscribe((params:RestaurantModel) => {
+     this.item=params;
     });
   }
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

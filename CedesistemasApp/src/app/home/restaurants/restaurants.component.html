@@ -5,7 +5,8 @@
 
 
       <ion-item-sliding *ngFor="let item of restaurants">
-        <ion-item   detail="true" routerLink="/home/tabs/restaurants/detail" routerDirection="forward">
+        <ion-item   detail="true"  [routerLink]="['/home/tabs/restaurants/detail', item]"
+        routerLinkActive="router-link-active" routerDirection="forward">
           <ion-avatar slot="start">
             <img src="{{item.imagen}}">
           </ion-avatar>
