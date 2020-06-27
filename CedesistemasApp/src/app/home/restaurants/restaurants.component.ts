@@ -9,7 +9,7 @@ import { Component, OnInit } from "@angular/core";
 })
 export class RestaurantsComponent {
   restaurants: RestaurantModel[] = [];
-
+  restaurantsAll: RestaurantModel[] = [];
   constructor(private restaurantsService: RestaurantsService) {
     this.loadRestaurants();
   }
@@ -18,6 +18,19 @@ export class RestaurantsComponent {
       .getRestaurants()
       .subscribe((data: RestaurantModel[]) => {
         this.restaurants = data;
+        this.restaurantsAll = data;
       });
+  }
+
+  search(evt) {
+    const text: string = evt.srcElement.value;
+    if (!text) {
+      this.loadRestaurants();
+    } 
+    this.restaurants = this.restaurantsAll.filter((r: RestaurantModel) => {
+      if (r.nombre.toLowerCase().indexOf(text.toLowerCase()) !== -1) {
+        return r;
+      }
+    });
   }
 }
