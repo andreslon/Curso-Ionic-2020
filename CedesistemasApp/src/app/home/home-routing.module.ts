@@ -22,6 +22,15 @@ const routes: Routes = [
           {
             path:'',
             loadChildren: () => import('./restaurants/restaurants.module').then((m)=> m.RestaurantsModule)
+          },
+          {
+            path:'detail',
+            children:[
+              {
+                path:'',
+                loadChildren: () => import('./detail/detail.module').then((m)=> m.DetailModule)
+              }
+            ]
           }
         ]
       },
