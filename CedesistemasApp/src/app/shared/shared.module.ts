@@ -11,4 +11,5 @@ import { CalificationPipe } from './pipes/calification.pipe';
   ],
   exports:[ CalificationPipe]
 }) 
+
 export class SharedModule { }
