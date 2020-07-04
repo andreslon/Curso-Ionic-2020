@@ -35,4 +35,8 @@ export class RestaurantsComponent {
       }
     });
   }
+
+  delete(id){
+    
+  }
 }
