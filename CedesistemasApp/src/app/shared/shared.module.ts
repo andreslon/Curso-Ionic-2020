@@ -4,7 +4,8 @@ import { CalificationPipe } from './pipes/calification.pipe';
 import { StorageService } from './services/storage.service';
 
 @NgModule({
-  declarations: [CalificationPipe, StorageService],
+  declarations: [CalificationPipe],
+  providers:[StorageService],
   imports: [
     CommonModule
   ],

@@ -31,20 +31,13 @@ export class RestaurantsComponent {
     });
   }
   loadRestaurants() {
-    this.storageService.get("restaurants").then((value: any) => { 
-      if (value) {
-        this.restaurants = value;
-        this.restaurantsAll = value;
-      } else {
-        this.restaurantsService
-          .getRestaurants()
-          .subscribe((data: RestaurantModel[]) => {
-            this.restaurants = data;
-            this.restaurantsAll = data;
+    this.restaurantsService
+    .getRestaurants()
+    .subscribe((data: RestaurantModel[]) => {
+      this.restaurants = data;
+      this.restaurantsAll = data;
 
-            this.storageService.set("restaurants", data);
-          });
-      }
+      this.storageService.set("restaurants", data);
     });
   }
 

@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home/tabs/restaurants"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Agregar restaurante</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+   
+  <ion-item>
+    <ion-input placeholder="Nombre" clearInput [(ngModel)]="nombre" ></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input placeholder="Imagén" clearInput [(ngModel)]="imagen"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input placeholder="Dirección" clearInput [(ngModel)]="direccion"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input placeholder="Teléfono" clearInput [(ngModel)]="telefono"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input placeholder="Sitio Web" clearInput [(ngModel)]="sitioWeb"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input placeholder="Calificación" type="number" clearInput [(ngModel)]="calificacion"></ion-input>
+  </ion-item>
+
+
+  <ion-button expand="block" (click)="guardar()">Guardar</ion-button>
+
+</ion-content>

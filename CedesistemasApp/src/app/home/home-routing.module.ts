@@ -31,6 +31,15 @@ const routes: Routes = [
                 loadChildren: () => import('./detail/detail.module').then((m)=> m.DetailModule)
               }
             ]
+          },
+          {
+            path:'add-edit',
+            children:[
+              {
+                path:'',
+                loadChildren: () => import('./add-edit/add-edit.module').then((m)=> m.AddEditModule)
+              }
+            ]
           }
         ]
       },
