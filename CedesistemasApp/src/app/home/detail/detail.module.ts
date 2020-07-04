@@ -6,11 +6,13 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 
 import { CallNumber } from '@ionic-native/call-number/ngx'; 
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   declarations: [DetailComponent],
   providers:[CallNumber],
   imports: [
+    SharedModule,
     CommonModule,
     FormsModule,
     IonicModule,

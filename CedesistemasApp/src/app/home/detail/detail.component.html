@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/tabs/restaurants"></ion-back-button>
+      <ion-back-button defaultHref="/home/tabs/restaurants"></ion-back-button>
     </ion-buttons>
     <ion-title>{{item.nombre}}</ion-title>
   </ion-toolbar>
@@ -10,7 +10,13 @@
 
 <ion-content> 
   <ion-card style="margin: 0;">
-    <img src="{{item.imagen}}" />
+
+    <div>
+      <div class="calification" [style.background-color]="item.calificacion | calification" >
+       <h2> {{item.calificacion}}</h2>
+      </div>
+       <img src="{{item.imagen}}" />
+    </div> 
     <ion-card-header> 
       <ion-card-title> {{item.nombre}}</ion-card-title>
       <ion-card-subtitle> {{item.direccion}}</ion-card-subtitle>
