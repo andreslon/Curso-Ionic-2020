@@ -12,4 +12,9 @@ export class RestaurantsService {
       "https://cedesistemas-app-api.azurewebsites.net/api/Restaurantes";
     return this.httpClient.get(url);
   }
+
+  deleteRestaurant(id){
+    const url="https://cedesistemas-app-api.azurewebsites.net/api/Restaurantes/"+ id;
+    return this.httpClient.delete(url);
+  }
 }
