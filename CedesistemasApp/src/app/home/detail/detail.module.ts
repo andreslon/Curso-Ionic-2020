@@ -1,3 +1,4 @@
+import { SharedModule } from './../../shared/shared.module';
 import { RouterModule } from "@angular/router";
 import { IonicModule } from "@ionic/angular";
 import { FormsModule } from "@angular/forms";
@@ -11,6 +12,7 @@ import { CallNumber } from '@ionic-native/call-number/ngx';
   declarations: [DetailComponent],
   providers:[CallNumber],
   imports: [
+    SharedModule,
     CommonModule,
     FormsModule,
     IonicModule,
