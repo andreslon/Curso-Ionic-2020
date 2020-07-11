@@ -4,6 +4,7 @@ import { Component, OnInit } from "@angular/core";
 import { interval } from "rxjs";
 import { AlertController } from "@ionic/angular";
 import { StorageService } from "src/app/shared/services/storage.service";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: "app-restaurants",
@@ -17,28 +18,29 @@ export class RestaurantsComponent {
   constructor(
     private restaurantsService: RestaurantsService,
     private alertController: AlertController,
-    private storageService: StorageService
+    private storageService: StorageService,
+    private activatedRoute: ActivatedRoute
   ) {
     this.loadRestaurants();
 
-    ///this.refresh();
-  }
-  refresh() {
-    let int = interval(30000);
-    int.subscribe((r) => {
-      console.log("refreshing restaurants");
-      this.loadRestaurants();
+    this.activatedRoute.params.subscribe((params: any) => {
+      debugger;
+      let refresh = window.localStorage.getItem("refresh");
+      if (refresh) {
+        window.localStorage.removeItem("refresh");
+        this.loadRestaurants();
+      }
     });
   }
   loadRestaurants() {
     this.restaurantsService
-    .getRestaurants()
-    .subscribe((data: RestaurantModel[]) => {
-      this.restaurants = data;
-      this.restaurantsAll = data;
+      .getRestaurants()
+      .subscribe((data: RestaurantModel[]) => {
+        this.restaurants = data;
+        this.restaurantsAll = data;
 
-      this.storageService.set("restaurants", data);
-    });
+        this.storageService.set("restaurants", data);
+      });
   }
 
   search(evt) {
