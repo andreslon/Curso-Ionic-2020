@@ -25,4 +25,11 @@ export class RestaurantsService {
       "https://cedesistemas-app-api.azurewebsites.net/api/Restaurantes";
     return this.httpClient.post(url, body);
   }
+
+  updateRestaurant(id:string, body:RestaurantModel){ 
+    const url =
+    "https://cedesistemas-app-api.azurewebsites.net/api/Restaurantes/" + id;
+  return this.httpClient.put(url, body);
+  }
+
 }

@@ -3,20 +3,18 @@
     <!-- Searchbar with cancel button shown on focus -->
     <ion-searchbar showCancelButton="focus" (ionInput)="search($event)" (ionCancel)="search($event)"></ion-searchbar>
     <ion-buttons slot="end">
-      <ion-button  [routerLink]="['/home/tabs/restaurants/add-edit']" routerLinkActive="router-link-active"  >
+      <ion-button [routerLink]="['/home/tabs/restaurants/add-edit']" routerLinkActive="router-link-active">
         <ion-icon name="add-outline"></ion-icon>
       </ion-button>
-    </ion-buttons> 
-  </ion-toolbar> 
+    </ion-buttons>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-list>
     <ion-item-sliding *ngFor="let item of restaurants">
 
-      <ion-item detail="true" 
-      
-      [routerLink]="['/home/tabs/restaurants/detail', item]"
+      <ion-item detail="true" [routerLink]="['/home/tabs/restaurants/detail', item]"
         routerLinkActive="router-link-active">
         <ion-avatar slot="start">
           <img src="{{item.imagen}}">
@@ -28,6 +26,8 @@
       </ion-item>
 
       <ion-item-options side="end">
+        <ion-item-option color="primary" [routerLink]="['/home/tabs/restaurants/add-edit', item]"
+          routerLinkActive="router-link-active">Editar</ion-item-option>
         <ion-item-option color="danger" (click)="delete(item.id)">Eliminar</ion-item-option>
       </ion-item-options>
 
